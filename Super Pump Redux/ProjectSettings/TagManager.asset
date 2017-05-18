@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - pump1
+  - pump2
+  - pump3
+  - pump4
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,52 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1 (Furthest back)
+    uniqueID: 59378981
+    locked: 0
+  - name: 2
+    uniqueID: 2998510301
+    locked: 0
+  - name: 3
+    uniqueID: 1434120033
+    locked: 0
+  - name: 4
+    uniqueID: 402985489
+    locked: 0
+  - name: 5
+    uniqueID: 1157933639
+    locked: 0
+  - name: 6
+    uniqueID: 1280121495
+    locked: 0
+  - name: 7
+    uniqueID: 4233476917
+    locked: 0
+  - name: 8
+    uniqueID: 4186659951
+    locked: 0
+  - name: 9
+    uniqueID: 2426989937
+    locked: 0
+  - name: 10
+    uniqueID: 1208054885
+    locked: 0
+  - name: 11
+    uniqueID: 3118085841
+    locked: 0
+  - name: 12
+    uniqueID: 2812747377
+    locked: 0
+  - name: 13
+    uniqueID: 1209634303
+    locked: 0
+  - name: 14
+    uniqueID: 2057556679
+    locked: 0
+  - name: 15
+    uniqueID: 3368500843
+    locked: 0
+  - name: 16
+    uniqueID: 22593841
     locked: 0

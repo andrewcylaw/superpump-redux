@@ -6,8 +6,7 @@ public class DestroyByTime : MonoBehaviour {
 
     public float spawnToDeathTime;
 
-    void Awake()
-    {
+    void Awake() {
         Destroy(gameObject, spawnToDeathTime);
     }
 
