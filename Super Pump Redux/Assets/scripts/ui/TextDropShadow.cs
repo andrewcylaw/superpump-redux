@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class TextDropShadow : MonoBehaviour {
 
     // Distance down and to the right of the text to have the drop shadow
-    private static float OFFSET_DISTANCE = 10f;
+    public float offsetDistance;
 
     private GameObject dropShadow;
     private Text dsText;
@@ -33,7 +33,7 @@ public class TextDropShadow : MonoBehaviour {
         dropShadow.transform.SetParent(transform);
         dropShadow.AddComponent<Text>();
         dropShadow.GetComponent<RectTransform>().sizeDelta = gameObject.GetComponent<RectTransform>().sizeDelta;
-        dropShadow.GetComponent<RectTransform>().anchoredPosition = new Vector2(OFFSET_DISTANCE, -OFFSET_DISTANCE);
+        dropShadow.GetComponent<RectTransform>().anchoredPosition = new Vector2(offsetDistance, -offsetDistance);
 
         dropShadow.transform.localScale = transform.localScale;
         dropShadow.name = gameObject.name + "DropShadow";
@@ -48,6 +48,10 @@ public class TextDropShadow : MonoBehaviour {
         dsText.font = regText.font;
         dsText.text = regText.text;
         dsText.fontSize = regText.fontSize;
+    }
+
+    public GameObject GetDropShadow() {
+        return this.dropShadow;
     }
 
 }

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50128323877406990}
   - component: {fileID: 61165181286027378}
   - component: {fileID: 114710634106107706}
+  - component: {fileID: 114321266541905976}
   m_Layer: 0
   m_Name: CarPurple
   m_TagString: Untagged
@@ -77,6 +78,17 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.2599998, y: 2.2899997}
+--- !u!114 &114321266541905976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1687813780382314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a76d1c0fc9c114782bccdb781a0373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114710634106107706
 MonoBehaviour:
   m_ObjectHideFlags: 1

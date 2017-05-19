@@ -45,6 +45,8 @@ public class GameController : MonoBehaviour {
         string curSelectedTag = pumpSelector.GetCurSelectedTag();
         if (isCarAtPump.ContainsKey(curSelectedTag)) {           
             isCarAtPump[curSelectedTag].StartCar();
+            isCarAtPump[curSelectedTag].StopStopwatch();
+            isCarAtPump[curSelectedTag].FlashText();
         }
     }
 
