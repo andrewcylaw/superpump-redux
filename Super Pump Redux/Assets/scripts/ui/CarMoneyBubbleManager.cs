@@ -56,6 +56,15 @@ public class CarMoneyBubbleManager : MonoBehaviour {
     }
 
     public void ShowMoneyAmount(float money) {
+        Text moneyTextLabelDropShadow = moneyTextLabel.GetComponent<TextDropShadow>().GetDropShadow().GetComponent<Text>();
+        Text moneyTextCounterDropShadow = moneyTextCounter.GetComponent<TextDropShadow>().GetDropShadow().GetComponent<Text>();
+
+        moneyTextLabel.enabled = true;
+        moneyTextLabelDropShadow.enabled = true;
+        moneyTextCounter.enabled = true;
+        moneyTextCounterDropShadow.enabled = true;
+        moneyBubble.enabled = true;
+
         moneyTextCounter.text = money.ToString("C2");
     }
 

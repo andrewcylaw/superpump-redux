@@ -22,7 +22,7 @@ public class Pump : MonoBehaviour {
 
 
     private float MIN_SPEED = -5.0f;
-    private float MAX_SPEED = -10.0f;
+    private float MAX_SPEED = -12.0f;
 
     public string pumpTag;
     public CarSpawner carSpawner;
@@ -45,6 +45,19 @@ public class Pump : MonoBehaviour {
             collider.gameObject.GetComponent<Car>().ShowMoney();
             gameController.SetCarAtPump(tag, collider.gameObject.GetComponent<Car>());      
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collider) {
+        if (collider.gameObject.CompareTag(tag)) {
+            StartCoroutine(Wait());
+        }
+    }
+
+    // slow car exiting + fast car entering = game crash ;)
+    IEnumerator Wait() {
+        float randVal = Random.Range(2.0f, 3.5f);
+        yield return new WaitForSeconds(randVal);
+        SpawnCar();
     }
 
     public void SpawnCar() {

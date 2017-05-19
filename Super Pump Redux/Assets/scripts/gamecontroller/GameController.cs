@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour {
         axisInUse = false;
         isCarAtPump = new Dictionary<string, Car>();
         pumpSelector = GetComponent<PumpSelector>();
+
+        GetComponent<PricePerLitreMapper>().GetPricePerLitre(numGood);
     }
 	
 	void Update () {       
@@ -54,6 +56,8 @@ public class GameController : MonoBehaviour {
             car.StopStopwatch();
             car.FlashText();
 
+            // Arbitrary destruction time
+            Destroy(car, 6.0f);
             CalculateScore(car, car.GetStopwatch());
             RemoveCarFromPump(car.tag);         
         }
@@ -80,8 +84,11 @@ public class GameController : MonoBehaviour {
 
         float proximity = Mathf.Abs(car.GetMoney() - ((float) stopwatch.Elapsed.TotalSeconds) * pricePerLitre);
 
-        if(proximity < 0.75) {
+        if(proximity < 1.25) {
             numGood++;
+            GetComponent<IconSpawner>().SpawnGoodIcon(car.tag);
+        } else {
+            GetComponent<IconSpawner>().SpawnBadIcon(car.tag);
         }
 
         UnityEngine.Debug.Log("Car with tag: " + car.tag + " has a proximitiy of " + proximity);
