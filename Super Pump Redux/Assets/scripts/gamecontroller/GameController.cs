@@ -11,11 +11,14 @@ public class GameController : MonoBehaviour {
 
     // To prevent flickering of axis due to PS4 controller
     private bool axisInUse;
-
+    private bool gameOver;
     private int numGood;
+    private int numBad;
 
     void Start () {
+        gameOver = false;
         numGood = 0;
+        numBad = 0;
         axisInUse = false;
         isCarAtPump = new Dictionary<string, Car>();
         pumpSelector = GetComponent<PumpSelector>();
@@ -27,7 +30,7 @@ public class GameController : MonoBehaviour {
 
         axisInUse = false;
 
-        if(!axisInUse) {
+        if(!axisInUse && !gameOver) {
             if (Input.GetAxisRaw("PS4_x") == 1) {
                 MoveCar();
             } if (Input.GetAxisRaw("PS4_dpad_x") == 1) {
@@ -45,6 +48,10 @@ public class GameController : MonoBehaviour {
             }
         }               
     }   
+
+    public void SetGameOver(bool gameOver) {
+        this.gameOver = gameOver;
+    }
 
 
     // If car is parked and the player currently has this pump selected, send the car away
@@ -83,9 +90,18 @@ public class GameController : MonoBehaviour {
             GetComponent<Lives>().AddLife();
             GetComponent<IconSpawner>().SpawnGoodIcon(car.tag);
         } else {
+            numBad++;
             GetComponent<Lives>().RemoveLife();
             GetComponent<IconSpawner>().SpawnBadIcon(car.tag);
         }
+    }
+
+    public int GetNumGood() {
+        return numGood;
+    }
+
+    public int GetNumBad() {
+        return numBad;
     }
 
 

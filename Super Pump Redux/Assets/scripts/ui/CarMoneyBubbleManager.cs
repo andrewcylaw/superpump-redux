@@ -9,12 +9,8 @@ public class CarMoneyBubbleManager : MonoBehaviour {
 
     private Text moneyTextLabel;
     private Text moneyTextCounter;
-
-    private Text curFuelTextLabel;
     private Text curFuelTextCounter;
-
     private Image moneyBubble;
-    private Image curFuelBubble;
 
     // Hides UI after flashing
 	public void HideUI() {
@@ -86,10 +82,6 @@ public class CarMoneyBubbleManager : MonoBehaviour {
         this.moneyTextCounter = moneyTextCounter;
     }
 
-    public void SetCurFuelTextLabel(Text curFuelTextLabel) {
-        this.curFuelTextLabel = curFuelTextLabel;
-    }
-
     public void SetCurFuelTextCounter(Text curFuelTextCounter) {
         this.curFuelTextCounter = curFuelTextCounter;
     }
@@ -98,7 +90,4 @@ public class CarMoneyBubbleManager : MonoBehaviour {
         this.moneyBubble = moneyBubble;
     }
 
-    public void SetCurFuelBubble(Image curFuelBubble) {
-        this.curFuelBubble = curFuelBubble;
-    }
 }

@@ -71,11 +71,9 @@ public class Pump : MonoBehaviour {
         // Inject relevant UI fields
         CarMoneyBubbleManager carUI = currentCar.GetComponent<CarMoneyBubbleManager>();
         carUI.SetMoneyTextLabel(moneyTextLabel);
-        carUI.SetMoneyTextCounter(moneyTextCounter);
-        carUI.SetCurFuelTextLabel(curFuelTextLabel);
+        carUI.SetMoneyTextCounter(moneyTextCounter);        
         carUI.SetCurFuelTextCounter(curFuelTextCounter);
-        carUI.SetMoneyBubble(moneyBubble);
-        carUI.SetCurFuelBubble(curFuelBubble);
+        carUI.SetMoneyBubble(moneyBubble);        
     }
 
 }

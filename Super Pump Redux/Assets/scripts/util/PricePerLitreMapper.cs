@@ -9,14 +9,7 @@ public class PricePerLitreMapper : MonoBehaviour {
     private static int LEVEL_2_CARS_REQ = 7;
     private static int LEVEL_3_CARS_REQ = 11;
 
-    public Text pplText;
-
-    private GameController gameController;
-	
-	void Start () {
-        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
-    }
-	
+    public Text pplText;	
 
     // basically level definition + setting the text
 	public float GetPricePerLitre(int numCarsPassed) {

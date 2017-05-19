@@ -15,7 +15,7 @@ public class TextDropShadow : MonoBehaviour {
     private Text dsText;
     private Text regText;
 
-    void Start() {
+    void Awake() {
         regText = GetComponent<Text>();
         createText();
     }

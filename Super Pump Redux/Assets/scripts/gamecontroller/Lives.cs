@@ -17,7 +17,8 @@ public class Lives : MonoBehaviour {
 
     public void RemoveLife() {
         if(livesLeft == 1) {
-            // game over
+            GetComponent<GameOver>().GameOverCountdown();
+            life1.enabled = false;
         } else if (livesLeft == 3) {
             life3.enabled = false;
             livesLeft--;
