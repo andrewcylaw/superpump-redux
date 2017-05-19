@@ -74,7 +74,7 @@ public class CarMoneyBubbleManager : MonoBehaviour {
         curFuelTextCounter.text = string.Format(
             text, 
             stopwatch.Elapsed.Seconds, 
-            stopwatch.Elapsed.Milliseconds.ToString("D2")); 
+            stopwatch.Elapsed.Milliseconds.ToString("00")); 
     }
 
     // Injectors since this car is a prefab

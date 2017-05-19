@@ -75,23 +75,17 @@ public class GameController : MonoBehaviour {
     }
 
     private void CalculateScore(Car car, Stopwatch stopwatch) {
-        float pricePerLitre = GetComponent<PricePerLitreMapper>().GetPricePerLitre(numGood);
-
-        UnityEngine.Debug.Log("stopwatch elapsed seconds: " + ((float)stopwatch.Elapsed.TotalSeconds));
-        UnityEngine.Debug.Log("car money: " + car.GetMoney());
-        UnityEngine.Debug.Log("ppl: " + pricePerLitre);
-
-
+        float pricePerLitre = GetComponent<PricePerLitreMapper>().GetPricePerLitre(numGood);    
         float proximity = Mathf.Abs(car.GetMoney() - ((float) stopwatch.Elapsed.TotalSeconds) * pricePerLitre);
 
-        if(proximity < 1.25) {
+        if(proximity < 1.25) {            
             numGood++;
+            GetComponent<Lives>().AddLife();
             GetComponent<IconSpawner>().SpawnGoodIcon(car.tag);
         } else {
+            GetComponent<Lives>().RemoveLife();
             GetComponent<IconSpawner>().SpawnBadIcon(car.tag);
         }
-
-        UnityEngine.Debug.Log("Car with tag: " + car.tag + " has a proximitiy of " + proximity);
     }
 
 

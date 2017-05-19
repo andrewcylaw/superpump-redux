@@ -18,12 +18,14 @@ public class IconSpawner : MonoBehaviour {
         Image iconSpawnSpot = CheckSpawnSpot(tag);
         Image icon = Instantiate(goodIcon, iconSpawnSpot.GetComponent<Transform>().position, iconSpawnSpot.GetComponent<Transform>().rotation);
         icon.transform.SetParent(iconSpawnSpot.transform);
+        icon.GetComponent<AudioSource>().Play();
     }
 
     public void SpawnBadIcon(string tag) {
         Image iconSpawnSpot = CheckSpawnSpot(tag);
         Image icon = Instantiate(badIcon, iconSpawnSpot.GetComponent<Transform>().position, iconSpawnSpot.GetComponent<Transform>().rotation);
         icon.transform.SetParent(iconSpawnSpot.transform);
+        icon.GetComponent<AudioSource>().Play();
     }
 
     private Image CheckSpawnSpot(string tag) {
