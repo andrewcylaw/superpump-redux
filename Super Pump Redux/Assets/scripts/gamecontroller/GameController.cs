@@ -12,15 +12,17 @@ public class GameController : MonoBehaviour {
     // To prevent flickering of axis due to PS4 controller
     private bool axisInUse;
 
-    public float pricePerLitre;
+    private int numGood;
 
     void Start () {
+        numGood = 0;
         axisInUse = false;
         isCarAtPump = new Dictionary<string, Car>();
         pumpSelector = GetComponent<PumpSelector>();
     }
 	
-	void Update () {
+	void Update () {       
+
         axisInUse = false;
 
         if(!axisInUse) {
@@ -40,7 +42,7 @@ public class GameController : MonoBehaviour {
                 axisInUse = true;
             }
         }               
-    }
+    }   
 
 
     // If car is parked and the player currently has this pump selected, send the car away
@@ -48,10 +50,10 @@ public class GameController : MonoBehaviour {
         string curSelectedTag = pumpSelector.GetCurSelectedTag();
         if (isCarAtPump.ContainsKey(curSelectedTag)) {            
             Car car = isCarAtPump[curSelectedTag];
-
             car.StartCar();
             car.StopStopwatch();
             car.FlashText();
+
             CalculateScore(car, car.GetStopwatch());
             RemoveCarFromPump(car.tag);         
         }
@@ -69,7 +71,21 @@ public class GameController : MonoBehaviour {
     }
 
     private void CalculateScore(Car car, Stopwatch stopwatch) {
+        float pricePerLitre = GetComponent<PricePerLitreMapper>().GetPricePerLitre(numGood);
+
+        UnityEngine.Debug.Log("stopwatch elapsed seconds: " + ((float)stopwatch.Elapsed.TotalSeconds));
+        UnityEngine.Debug.Log("car money: " + car.GetMoney());
+        UnityEngine.Debug.Log("ppl: " + pricePerLitre);
+
+
         float proximity = Mathf.Abs(car.GetMoney() - ((float) stopwatch.Elapsed.TotalSeconds) * pricePerLitre);
+
+        if(proximity < 0.75) {
+            numGood++;
+        }
+
         UnityEngine.Debug.Log("Car with tag: " + car.tag + " has a proximitiy of " + proximity);
     }
+
+
 }

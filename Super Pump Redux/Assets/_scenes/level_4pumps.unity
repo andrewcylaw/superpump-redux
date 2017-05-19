@@ -3846,6 +3846,7 @@ GameObject:
   - component: {fileID: 2123552597}
   - component: {fileID: 2123552596}
   - component: {fileID: 2123552598}
+  - component: {fileID: 2123552599}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -3864,7 +3865,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a72ecaffc803f45a4720dccf31d253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pricePerLitre: 0
 --- !u!4 &2123552597
 Transform:
   m_ObjectHideFlags: 0
@@ -3897,3 +3897,14 @@ MonoBehaviour:
   pump2Selected: {fileID: 21300002, guid: dc61b25560fd9c646af6e7384d9c95a2, type: 3}
   pump3Selected: {fileID: 21300004, guid: dc61b25560fd9c646af6e7384d9c95a2, type: 3}
   pump4Selected: {fileID: 21300006, guid: dc61b25560fd9c646af6e7384d9c95a2, type: 3}
+--- !u!114 &2123552599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2123552595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87274f29237b0c34bb84643822f7e142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
