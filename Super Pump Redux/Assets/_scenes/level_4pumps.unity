@@ -219,10 +219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1fce1ac4b7e9654f86b30c41f130ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyTextLabel: {fileID: 1079993036}
-  moneyTextCounter: {fileID: 1178686212}
-  curFuelTextLabel: {fileID: 280249098}
-  curFuelTextCounter: {fileID: 726021519}
+  moneyTextLabel: {fileID: 280249098}
+  moneyTextCounter: {fileID: 726021519}
+  curFuelTextLabel: {fileID: 1079993036}
+  curFuelTextCounter: {fileID: 1178686212}
   moneyBubble: {fileID: 2029983219}
   curFuelBubble: {fileID: 853233433}
   pumpTag: pump3
@@ -1785,14 +1785,14 @@ RectTransform:
   m_GameObject: {fileID: 859163056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 339788930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -775.4, y: 181.93}
+  m_AnchoredPosition: {x: -757.3, y: 181.93}
   m_SizeDelta: {x: 194, y: 102.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &859163058
@@ -2990,14 +2990,14 @@ RectTransform:
   m_GameObject: {fileID: 1638643492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -1.24, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 562374938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -775.4, y: 181.93}
+  m_AnchoredPosition: {x: -757.57, y: 181.93}
   m_SizeDelta: {x: 194, y: 102.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638643494
@@ -3472,14 +3472,14 @@ RectTransform:
   m_GameObject: {fileID: 2029983217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -1.24, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 34556682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -775.4, y: 181.93}
+  m_AnchoredPosition: {x: -757.8, y: 181.93}
   m_SizeDelta: {x: 194, y: 102.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2029983219
@@ -3793,14 +3793,14 @@ RectTransform:
   m_GameObject: {fileID: 2100263630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.24, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1325379349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -775.4, y: 181.93}
+  m_AnchoredPosition: {x: -752.3, y: 181.93}
   m_SizeDelta: {x: 194, y: 102.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100263632
@@ -3864,6 +3864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a72ecaffc803f45a4720dccf31d253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pricePerLitre: 0
 --- !u!4 &2123552597
 Transform:
   m_ObjectHideFlags: 0

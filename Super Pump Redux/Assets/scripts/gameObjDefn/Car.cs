@@ -5,10 +5,14 @@ using System.Diagnostics;
 
 
 public class Car : MonoBehaviour {
+    // Forgive me for hard coding everything...
+    private static int MONEY_LOWER = 4;
+    private static int MONEY_UPPER = 12;
 
     private Rigidbody2D rb;
     private Vector2 speed;
     private Stopwatch fuelStopwatch;
+    private int money;
 
     private CarMoneyBubbleManager cmbm;
 
@@ -18,6 +22,8 @@ public class Car : MonoBehaviour {
         fuelStopwatch = new Stopwatch();
         rb = GetComponent<Rigidbody2D>();
         speed = rb.velocity;
+
+        money = Random.Range(MONEY_LOWER, MONEY_UPPER);       
     }
 
     void Update() {
@@ -33,6 +39,10 @@ public class Car : MonoBehaviour {
     }
 
     // Car manages its own fuel
+    public Stopwatch GetStopwatch() {
+        return fuelStopwatch;
+    }
+
     public void StartStopwatch() {
         fuelStopwatch.Start();
     }
@@ -44,5 +54,14 @@ public class Car : MonoBehaviour {
     public void FlashText() {
         cmbm.HideUI();
     }
+
+    public void ShowMoney() {
+        cmbm.ShowMoneyAmount(money);
+    }
+
+    public int GetMoney() {
+        return money;
+    }
+
 
 }

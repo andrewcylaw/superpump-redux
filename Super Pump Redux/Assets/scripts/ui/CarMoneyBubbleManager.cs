@@ -55,6 +55,10 @@ public class CarMoneyBubbleManager : MonoBehaviour {
         moneyBubble.enabled = true;
     }
 
+    public void ShowMoneyAmount(float money) {
+        moneyTextCounter.text = money.ToString("C2");
+    }
+
     // Updates text with the correct amounts
     public void ShowFuelAmount(Stopwatch stopwatch) {
         string text = "{0}.{1}";

@@ -42,6 +42,7 @@ public class Pump : MonoBehaviour {
             // Stop car and tell gc that it's stopped
             collider.gameObject.GetComponent<Car>().StopCar();
             collider.gameObject.GetComponent<Car>().StartStopwatch();
+            collider.gameObject.GetComponent<Car>().ShowMoney();
             gameController.SetCarAtPump(tag, collider.gameObject.GetComponent<Car>());      
         }
     }
@@ -52,7 +53,7 @@ public class Pump : MonoBehaviour {
             tag, 
             (float) Random.Range(MIN_SPEED, MAX_SPEED),
             (curSortingLayer + 1).ToString()
-        );
+        );        
 
         // Inject relevant UI fields
         CarMoneyBubbleManager carUI = currentCar.GetComponent<CarMoneyBubbleManager>();

@@ -15,8 +15,7 @@ public class CarSpawner : MonoBehaviour {
         GameObject spawnedCar = Instantiate(cars[(int)Random.Range(0, cars.Length)], transform.localPosition, transform.localRotation);
         spawnedCar.tag = tag;
         spawnedCar.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0.0f);
-        spawnedCar.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayer;        
-
+        spawnedCar.GetComponent<SpriteRenderer>().sortingLayerName = sortingLayer;                
         return spawnedCar;        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
@@ -10,6 +11,8 @@ public class GameController : MonoBehaviour {
 
     // To prevent flickering of axis due to PS4 controller
     private bool axisInUse;
+
+    public float pricePerLitre;
 
     void Start () {
         axisInUse = false;
@@ -43,10 +46,14 @@ public class GameController : MonoBehaviour {
     // If car is parked and the player currently has this pump selected, send the car away
     private void MoveCar() {
         string curSelectedTag = pumpSelector.GetCurSelectedTag();
-        if (isCarAtPump.ContainsKey(curSelectedTag)) {           
-            isCarAtPump[curSelectedTag].StartCar();
-            isCarAtPump[curSelectedTag].StopStopwatch();
-            isCarAtPump[curSelectedTag].FlashText();
+        if (isCarAtPump.ContainsKey(curSelectedTag)) {            
+            Car car = isCarAtPump[curSelectedTag];
+
+            car.StartCar();
+            car.StopStopwatch();
+            car.FlashText();
+            CalculateScore(car, car.GetStopwatch());
+            RemoveCarFromPump(car.tag);         
         }
     }
 
@@ -59,5 +66,10 @@ public class GameController : MonoBehaviour {
     // remove the car from the pump
     private void RemoveCarFromPump(string tag) {
         isCarAtPump.Remove(tag);
+    }
+
+    private void CalculateScore(Car car, Stopwatch stopwatch) {
+        float proximity = Mathf.Abs(car.GetMoney() - ((float) stopwatch.Elapsed.TotalSeconds) * pricePerLitre);
+        UnityEngine.Debug.Log("Car with tag: " + car.tag + " has a proximitiy of " + proximity);
     }
 }
